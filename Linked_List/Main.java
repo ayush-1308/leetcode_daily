@@ -8,6 +8,10 @@ public class Main {
         list.insertFirst(5);
         list.insertFirst(1);
         list.insertLast(10);
+        list.insert(7, 3);
+        System.out.println(list.deleteFirst());
+        System.out.println(list.deleteLast());
+        System.out.println(list.deleteFromIndex(2));
 
         list.display();
     }

@@ -52,6 +52,48 @@ public class LL {
         size += 1;
         }
 
+        public int deleteFirst(){
+            int value = head.value;
+            
+            head = head.next;
+            if(head == null){
+                tail = null;
+            }
+            size --;
+            return value;
+        }
+
+        public int deleteFromIndex(int index){
+            if(index == 0){
+                return deleteFirst();
+            }
+            if(index == size - 1){
+                return deleteLast();
+            }
+            Node prev = head;
+            for(int i = 1; i < index -1; i++){
+                prev = prev.next;
+            }
+            int value = prev.next.value;
+            prev.next = prev.next.next;
+            return value;
+        }
+
+        public int deleteLast(){
+            if(size <= 1){
+                return deleteFirst();
+            }
+            Node temp = head;
+            for(int i = 1; i< size-1; i++){
+                temp = temp.next;
+            }
+            int value = tail.value;
+            tail = temp;
+            tail.next = null;
+            size --;
+            return value;
+        }
+
     public void display() {
         Node temp = head;
         while(temp != null) {
