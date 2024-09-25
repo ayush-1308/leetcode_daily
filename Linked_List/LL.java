@@ -94,6 +94,17 @@ public class LL {
             return value;
         }
 
+        public Node getNode(int value){
+            Node temp = head;
+            while(temp != null){
+                if(temp.value == value){
+                    return temp;
+                }
+                temp = temp.next;
+            }
+            return null;
+        }
+
     public void display() {
         Node temp = head;
         while(temp != null) {
