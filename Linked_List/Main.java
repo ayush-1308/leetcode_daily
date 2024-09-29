@@ -27,4 +27,32 @@ public class Main {
 
         list.display();
     }
+
+    public static LL merge(LL list1, LL list2){
+        Node first = list1.head;
+        Node second = list2.head;
+
+        LL mergedList = new LL();
+
+        while(first!= null && second!= null){
+            if(first.val < second.val){
+                mergedList.insertLast(first.val);
+                first = first.next;
+            }
+            else{
+                mergedList.insertLast(second.val);
+                second = second.next;
+            }
+        }
+        while(first!= null){
+            mergedList.insertLast(first.val);
+            first = first.next;
+        }
+        while(second!= null){
+            mergedList.insertLast(second.val);
+            second = second.next;
+        }
+
+        return mergedList;
+    }
 }
